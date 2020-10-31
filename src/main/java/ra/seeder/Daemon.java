@@ -187,7 +187,7 @@ public class Daemon {
         }
         status = Status.Running;
 
-        // Check periodically to see if 1M5 stopped
+        // Check periodically to see if seeder stopped
         while (status == Status.Running) {
             Wait.aSec(2);
         }
