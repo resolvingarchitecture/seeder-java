@@ -50,48 +50,8 @@
         </dependency>
         <dependency>
             <groupId>resolvingarchitecture</groupId>
-            <artifactId>tor-client</artifactId>
-            <version>${ra.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>resolvingarchitecture</groupId>
-            <artifactId>tor-hiddenservice</artifactId>
-            <version>${ra.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>resolvingarchitecture</groupId>
             <artifactId>i2p-client</artifactId>
             <version>${ra.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>resolvingarchitecture</groupId>
-            <artifactId>network-manager</artifactId>
-            <version>${ra.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>resolvingarchitecture</groupId>
-            <artifactId>peermanager</artifactId>
-            <version>${ra.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>resolvingarchitecture</groupId>
-            <artifactId>press-freedom-index</artifactId>
-            <version>${ra.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.derby</groupId>
-            <artifactId>derby</artifactId>
-            <version>10.14.2.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.neo4j</groupId>
-            <artifactId>neo4j</artifactId>
-            <version>3.5.14</version>
-        </dependency>
-        <dependency>
-            <groupId>org.neo4j</groupId>
-            <artifactId>neo4j-cypher</artifactId>
-            <version>3.5.14</version>
         </dependency>
 
         <dependency>
