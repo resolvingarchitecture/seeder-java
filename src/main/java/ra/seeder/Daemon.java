@@ -31,14 +31,7 @@ public class Daemon {
     private File dataDir;
     private File cacheDir;
     private volatile File tmpDir;
-    private final Random tmpDirRand = new Random();
-    private final static Object lockA = new Object();
-    private boolean initialize = false;
-    private boolean configured = false;
-    private Locale locale;
     private String version = null;
-    // split up big lock on this to avoid deadlocks
-    private final Object lock1 = new Object();
 
     private ServiceBus bus;
     private Properties config;
