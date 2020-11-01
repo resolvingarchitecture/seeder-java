@@ -2,12 +2,7 @@ package ra.seeder;
 
 import ra.common.Status;
 import ra.i2p.I2PService;
-import ra.network.manager.NetworkManagerService;
-import ra.peermanager.PeerManagerService;
-import ra.pressfreedomindex.PFIScraperService;
 import ra.servicebus.ServiceBus;
-import ra.tor.TORClientService;
-import ra.tor.TORHiddenService;
 import ra.util.Config;
 import ra.util.SecureFile;
 import ra.util.SystemSettings;
@@ -19,7 +14,6 @@ import java.io.IOException;
 import java.util.Locale;
 import java.util.Properties;
 import java.util.Random;
-import java.util.TimeZone;
 import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
@@ -173,14 +167,8 @@ public class Daemon {
         bus = new ServiceBus();
         bus.start(config);
 
-        // Register Services
         try {
-//            bus.registerService(TORClientService.class, config, null);
-//            bus.registerService(TORHiddenService.class, config, null);
             bus.registerService(I2PService.class, config, null);
-            bus.registerService(NetworkManagerService.class, config, null);
-            bus.registerService(PeerManagerService.class, config, null);
-//            bus.registerService(PFIScraperService.class, config, null);
         } catch (Exception e) {
             LOG.severe(e.getLocalizedMessage());
             System.exit(-1);
