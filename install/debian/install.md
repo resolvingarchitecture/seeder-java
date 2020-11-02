@@ -35,7 +35,7 @@ systemctl status seeder.service
 ```
 * Check logs at: /usr/local/seeder/logs/
 ```
-tail -f out.log.0
+tail -f -n 1000 out.log.0
 ```
 * Stop service manually if/when desired
 ```
