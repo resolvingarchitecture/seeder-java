@@ -72,23 +72,27 @@ public class Daemon {
         LOG.info("RA Seeder Version: "+version);
         System.setProperty("ra.seeder.version", version);
 
-        String baseStr = null;
-        try {
-            baseDir = SystemSettings.getUserAppHomeDir(".ra","seeder",true);
-        } catch (IOException e) {
-            LOG.warning(e.getLocalizedMessage());
-            return;
-        }
-        if(baseDir!=null) {
-            config.put("ra.seeder.dir.base", baseDir.getAbsolutePath());
+        String baseStr = config.getProperty("ra.seeder.dir.base");
+        if(baseStr!=null) {
+            baseDir = new File(baseStr);
         } else {
-            baseDir = SystemSettings.getSystemApplicationDir(".ra", "seeder", true);
-            if (baseDir == null) {
-                LOG.severe("Unable to create base system directory for Seeder app.");
+            try {
+                baseDir = SystemSettings.getUserAppHomeDir(".ra", "seeder", true);
+            } catch (IOException e) {
+                LOG.warning(e.getLocalizedMessage());
                 return;
+            }
+            if (baseDir != null) {
+                config.put("ra.seeder.dir.base", baseDir.getAbsolutePath());
             } else {
-                baseStr = baseDir.getAbsolutePath();
-                config.put("ra.seeder.dir.base", baseStr);
+                baseDir = SystemSettings.getSystemApplicationDir(".ra", "seeder", true);
+                if (baseDir == null) {
+                    LOG.severe("Unable to create base system directory for Seeder app.");
+                    return;
+                } else {
+                    baseStr = baseDir.getAbsolutePath();
+                    config.put("ra.seeder.dir.base", baseStr);
+                }
             }
         }
 

@@ -1,0 +1,7 @@
+#!/sbin/openrc-run
+name=${RC_SVCNAME}
+command="java"
+command_args="-Xms768m -Xmx768m -jar /usr/local/seeder/ra-seeder-1.0.0.jar ra.seeder.dir.base=/usr/local/seeder java.util.logging.config.file=/usr/local/seeder/config/logging.properties"
+pidfile="@piddir@/${RC_SVCNAME}.pid"
+command_background=true
+

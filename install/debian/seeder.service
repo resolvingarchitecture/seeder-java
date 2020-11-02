@@ -1,0 +1,11 @@
+[Unit]
+Description=seeder
+
+[Service]
+Type=simple
+Restart=always
+ExecStart=java -Xms768m -Xmx768m -jar /usr/local/seeder/ra-seeder-1.0.0.jar ra.seeder.dir.base=/usr/local/seeder java.util.logging.config.file=/usr/local/seeder/config/logging.properties
+
+[Install]
+WantedBy=multi-user.target
+
