@@ -1,4 +1,4 @@
-# Installation on Alpine Linux
+# Installation on Debian 10 Linux
 
 * Install Java
 ```

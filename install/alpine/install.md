@@ -1,4 +1,4 @@
-# Installation on Alpine Linux
+# Installation on Alpine 3.12 Linux
 ***** Alpine doesn't have a fully compatible OpenJDK 11 against musl (vs glibc) so this will not work
 until OpenJDK 13 comes out with its full compile targeted to musl (not glibc)********
 
