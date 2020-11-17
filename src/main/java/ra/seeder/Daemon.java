@@ -164,8 +164,9 @@ public class Daemon {
         bus = new ServiceBus();
         bus.start(config);
 
+        // TODO: support registering services based on a configuration input
         try {
-            bus.registerService(I2PService.class, config, null);
+            bus.registerService(I2PService.class.getName(), config);
         } catch (Exception e) {
             LOG.severe(e.getLocalizedMessage());
             System.exit(-1);
